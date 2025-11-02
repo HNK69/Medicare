@@ -1,0 +1,287 @@
+/* File: static/css/style.css */
+
+/* ----------------------------------------
+   Medicare Hub — login page styles
+   Doctor themed, laptop-first with responsive stack
+   ---------------------------------------- */
+
+/* Reset & base */
+:root{
+  --bg-1: linear-gradient(120deg,#e7f8ff 0%, #f0fcfb 100%);
+  --accent: #0d6efd;       /* primary blue */
+  --accent-2: #0ec2b6;     /* teal */
+  --accent-deep: #064e6a;  /* deep teal for contrast */
+  --card-bg: #ffffff;
+  --muted: #7b8a92;
+  --radius: 14px;
+  --gap: 1rem;
+  --max-width: 980px;
+  --shadow: 0 12px 30px rgba(12,40,60,0.12);
+  --glass: rgba(255,255,255,0.75);
+}
+
+/* Basic reset */
+* { box-sizing: border-box; }
+html,body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Inter, "Segoe UI", Roboto, system-ui, -apple-system, "Helvetica Neue", Arial;
+  line-height: 1.45;
+  color: #163238;
+  background: var(--bg-1);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Header */
+.site-header {
+  display:flex;
+  align-items:center;
+  padding: 18px 28px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.site-brand {
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+.logo-svg { width:44px; height:44px; display:block; border-radius:8px; }
+.brand-name { font-weight:700; letter-spacing:0.2px; color:var(--accent-deep); }
+
+/* Page container */
+.auth-page {
+  min-height: calc(100vh - 120px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 20px;
+}
+
+/* Card */
+.auth-card {
+  width: 100%;
+  max-width: var(--max-width);
+  display: grid;
+  grid-template-columns: 1fr 420px; /* laptop first layout */
+  background: transparent;
+  gap: 26px;
+  align-items: stretch;
+}
+
+/* Left panel */
+.auth-left {
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(15,110,255,0.06), rgba(14,194,182,0.04));
+  padding: 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position: relative;
+  min-height: 460px;
+  box-shadow: var(--shadow);
+}
+
+.left-inner {
+  padding: 42px;
+  max-width: 560px;
+}
+
+.welcome {
+  font-size: 28px;
+  margin: 0 0 8px 0;
+  color: var(--accent-deep);
+}
+.lead {
+  margin: 0 0 18px 0;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* Illustration */
+.illustration {
+  margin: 18px 0 12px 0;
+  display:block;
+  width: 260px;
+  height: auto;
+}
+
+/* left feature list */
+.left-features {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 0 0;
+  display:flex;
+  gap: 12px;
+  flex-wrap:wrap;
+}
+.left-features li {
+  background: rgba(255,255,255,0.9);
+  padding: 10px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  color: var(--accent-deep);
+  box-shadow: 0 6px 18px rgba(6,50,60,0.04);
+}
+
+/* Right panel (form) */
+.auth-right {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height: 460px;
+}
+
+.form-wrap { width:100%; max-width: 360px; }
+.form-wrap h2 { margin: 0 0 8px 0; color: #0b3440; font-size: 20px; }
+.form-wrap p { margin: 0 0 14px 0; color: var(--muted); }
+
+/* Form fields */
+.login-form { display: grid; gap: 14px; margin-top: 6px; }
+.field { display:flex; flex-direction:column; gap:6px; }
+.field label {
+  font-size: 13px;
+  color: #2a4a50;
+}
+.field input[type="text"],
+.field input[type="password"],
+.field input[type="email"] {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #e6eef0;
+  background: linear-gradient(180deg, #fff, #fbfeff);
+  font-size: 14px;
+  color: #0f2f33;
+  transition: box-shadow .16s ease, border-color .16s ease, transform .08s ease;
+}
+
+/* small helper text */
+.field-help { font-size: 12px; color: var(--muted); }
+
+/* focus styles (accessible) */
+.field input:focus,
+.field input:focus-visible {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 6px 18px rgba(13,110,253,0.12);
+}
+
+/* layout helpers */
+.row.between { display:flex; justify-content:space-between; align-items:center; }
+.small-gap { gap:8px; }
+
+/* checkbox */
+.checkbox {
+  display:flex;
+  gap:8px;
+  align-items:center;
+  font-size:14px;
+  color: #264b50;
+}
+.checkbox input { width:16px; height:16px; }
+
+/* links */
+.text-link { color: var(--accent-deep); text-decoration:none; font-weight:600; font-size:13px; }
+.text-link:hover, .text-link:focus { text-decoration:underline; outline: none; }
+
+/* primary button */
+.btn-primary {
+  margin-top: 2px;
+  display:inline-block;
+  width:100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-2) 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  box-shadow: 0 10px 20px rgba(13,110,253,0.12);
+  transition: transform .08s ease, box-shadow .14s ease, opacity .12s ease;
+}
+.btn-primary:hover { transform: translateY(-2px); }
+.btn-primary:active { transform: translateY(0); opacity: .95; }
+
+/* alt actions */
+.alt-actions { margin-top:12px; font-size:13px; color: var(--muted); }
+.alt-actions a { color: var(--accent-deep); font-weight:600; text-decoration:none; }
+.alt-actions a:hover { text-decoration:underline; }
+
+/* error */
+.form-error {
+  background: #fff2f0;
+  border: 1px solid #ffd6d0;
+  padding: 10px 12px;
+  color: #a3322b;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+/* footer */
+.site-footer {
+  max-width: var(--max-width);
+  margin: 18px auto 30px;
+  padding: 0 20px;
+  color: var(--muted);
+  font-size:13px;
+  display:flex;
+  justify-content:center;
+}
+
+/* small screen responsiveness */
+@media (max-width: 900px) {
+  .auth-card { grid-template-columns: 1fr; padding: 20px; gap: 18px; }
+  .auth-left, .auth-right { min-height: auto; }
+  .illustration { width: 200px; }
+  .auth-left { padding: 10px; }
+  .form-wrap { max-width: 100%; }
+}
+
+/* screen-reader only */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0,0,0,0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+aside.system-card {
+  padding: var(--card-padding);
+  display: flex;
+  flex-direction: column;
+  gap: 14px; /* extra spacing between sections */
+}
+
+.system-card ul { 
+  list-style:none; 
+  padding:0; 
+  margin:0; 
+  display:flex; 
+  flex-direction: column; 
+  gap: 12px; /* increased spacing for readability */
+}
+
+.system-card .sys-item { 
+  font-size:13px; 
+  color:var(--muted); 
+  background:linear-gradient(180deg,#fff,#fbfeff); 
+  padding:12px; /* match card-padding for internal breathing room */
+  border-radius:8px; 
+}
+
+.dashboard-grid {
+  display:grid;
+  grid-template-columns: 300px 1fr 320px; /* increased right sidebar width */
+  gap: 26px; /* slightly bigger gap between center and right sidebar */
+}
